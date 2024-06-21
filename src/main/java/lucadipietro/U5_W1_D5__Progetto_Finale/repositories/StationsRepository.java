@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface StationsRepository extends JpaRepository<Station,Long> {
-    @Query("SELECT w FROM WorkStation w WHERE w.workStationType = :workStationType AND w.building.city = :city")
+    @Query("SELECT s FROM Station s WHERE s.stationType = :stationType AND s.building.city = :city")
     List<Station> searchByCityAndStationType(StationType stationType, String city);
 }
