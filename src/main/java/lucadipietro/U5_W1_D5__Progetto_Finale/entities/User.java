@@ -14,6 +14,8 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     @Id
+    @GeneratedValue
+    private long id;
     private String username;
     private String name;
     private String email;
