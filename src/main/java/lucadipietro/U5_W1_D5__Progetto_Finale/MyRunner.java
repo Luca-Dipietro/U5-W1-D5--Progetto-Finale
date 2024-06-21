@@ -15,6 +15,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Random;
 
 @Component
@@ -53,6 +54,9 @@ public class MyRunner implements CommandLineRunner {
 //            Reservation reservation = new Reservation(LocalDate.now().plusDays(faker.number().numberBetween(1,5)),usersService.findById(faker.number().numberBetween(1,10)),stationsService.findById(faker.number().numberBetween(1,5)));
 //            reservationsService.saveReservation(reservation);
 //        }
+
+        List<Station> stationsType = stationsService.searchByCityAndStationType(StationType.OPENSPACE,"Bryantside");
+        stationsType.forEach(System.out::println);
 
     }
 }
