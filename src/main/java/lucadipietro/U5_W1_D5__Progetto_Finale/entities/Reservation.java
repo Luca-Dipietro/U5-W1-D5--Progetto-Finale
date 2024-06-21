@@ -1,6 +1,7 @@
 package lucadipietro.U5_W1_D5__Progetto_Finale.entities;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import java.time.LocalDate;
 public class Reservation {
     @Id
     @GeneratedValue
+    @Setter(AccessLevel.NONE)
     private long id;
     @Column(name = "reservation_date")
     private LocalDate reservationDate;
